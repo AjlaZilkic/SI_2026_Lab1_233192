@@ -60,7 +60,7 @@ class Library {
     }
 }
 
- public class Main {
+ public class SI2026Lab1Main  {
     public static void main(String[] args) {
         Library library = new Library();
         library.addBook(new Book("1984", "George Orwell", "Dystopia"));
