@@ -31,8 +31,20 @@ class Library {
     return false;
 }
 
-    public void borrowBook(String title) {
+  public void borrowBook(String title) {
+    for (Book book : books) {
+        if (book.title.equalsIgnoreCase(title)) {
+            if (!book.isBorrowed) {
+                book.isBorrowed = true;
+                System.out.println("Book checked out");
+            } else {
+                System.out.println("Book already borrowed");
+            }
+            return;
+        }
     }
+    System.out.println("Book not found");
+}
 
     public void returnBook(String title) {
     }
