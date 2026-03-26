@@ -54,7 +54,13 @@ class Library {
     }
 
     public void listByGenre(String genre) {
+    System.out.println("Books in genre: " + genre);
+    for (Book book : books) {
+        if (book.genre.equalsIgnoreCase(genre)) {
+            System.out.println(" - " + book.title + " by " + book.author);
+        }
     }
+}
 
     public void printBorrowed() {
     }
@@ -69,6 +75,6 @@ class Library {
         library.addBook(new Book("The Hobbit", "J.R.R. Tolkien", "Fantasy"));
    System.out.println(library.searchByTitle("1984"));
 System.out.println(library.searchByTitle("Harry Potter"));
-   
+   library.listByGenre("Sci-Fi");
     }
 }
