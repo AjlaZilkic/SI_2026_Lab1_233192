@@ -1,0 +1,40 @@
+Ime i prezime: Ajla Zilkikj
+Broj na indeks: 233192
+Email: ajla.zilkikj@students.finki.ukim.mk
+
+git checkout -b feature-search-books
+
+git add SI2026Lab1Main.java
+git commit -m "Implement book search"
+
+git push -u origin feature-search-books
+
+git checkout master
+git merge feature-search-books
+
+Користени команди: git checkout master, git merge feature-search-books
+Спојувањето беше FAST-FORWARD. Причина: master не напреднувал со ниеден нов commit откако е креирана гранката feature-search-books, така што Git само го поместил покажувачот напред. Не настанаа конфликти.
+
+Излез од git log --oneline --graph --all:
+* 1691d21 (HEAD -> master, origin/feature-search-books, feature-search-books) Implement book search
+* 5d58211 (origin/master) Add starter code
+* f7624d0 Initial commit
+
+git checkout feature-borrow-book
+git merge master
+
+Настана конфликт во SI2026Lab1Main.java. Двете гранки ја имаа променето истата линија со пораката за позајмување - feature-borrow-book имаше "Borrowed successfully", а master имаше "Book checked out". Конфликтот го решив рачно така што ја задржав пораката "Borrowed successfully" и ги избришав Git маркер линиите. Merge стратегијата беше RECURSIVE (3-way merge).
+
+Излез од git status:
+On branch feature-borrow-book
+Your branch is ahead of 'origin/feature-borrow-book' by 2 commits.
+  (use "git push" to publish your local commits)
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        233192.txt
+nothing added to commit but untracked files present (use "git add" to track)
+
+git checkout master
+git merge feature-genre-report
+
+Спојувањето беше RECURSIVE (ort стратегија). Причина: master напреднувал со commit "Update borrow message on master" откако е креирана гранката feature-genre-report, така што Git моraше да направи 3-way merge. Не настанаа конфликти.

@@ -1,0 +1,17 @@
+*   4e382b1 Resolve merge conflict
+|\  
+| *   ef63f00 Resolve merge conflict
+| |\  
+| * | e386b45 Implement borrow book
+| * | a68fb77 Implement borrow book
+* | |   cba3e76 Merge branch 'feature-genre-report'
+|\ \ \  
+| |_|/  
+|/| |   
+| * | d3e6552 Implement genre report
+| |/  
+* / 9ae90d6 Update borrow message on master
+|/  
+* 1691d21 Implement book search
+* 5d58211 Add starter code
+* f7624d0 Initial commit
