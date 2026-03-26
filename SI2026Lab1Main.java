@@ -31,8 +31,20 @@ class Library {
     return false;
 }
 
-    public void borrowBook(String title) {
+  public void borrowBook(String title) {
+    for (Book book : books) {
+        if (book.title.equalsIgnoreCase(title)) {
+            if (!book.isBorrowed) {
+                book.isBorrowed = true;
+                System.out.println("Borrowed successfully");
+            } else {
+                System.out.println("Book already borrowed");
+            }
+            return;
+        }
     }
+    System.out.println("Book not found");
+}
 
     public void returnBook(String title) {
     }
@@ -57,6 +69,6 @@ class Library {
         library.addBook(new Book("The Hobbit", "J.R.R. Tolkien", "Fantasy"));
    System.out.println(library.searchByTitle("1984"));
 System.out.println(library.searchByTitle("Harry Potter"));
-   
+   library.borrowBook("1984");
     }
 }
