@@ -22,9 +22,14 @@ class Library {
         books.add(book);
     }
 
-    public boolean searchByTitle(String title) {
-        return false;
+   public boolean searchByTitle(String title) {
+    for (Book book : books) {
+        if (book.title.equalsIgnoreCase(title)) {
+            return true;
+        }
     }
+    return false;
+}
 
     public void borrowBook(String title) {
     }
@@ -50,5 +55,8 @@ class Library {
         library.addBook(new Book("Clean Code", "Robert Martin", "Programming"));
         library.addBook(new Book("Dune", "Frank Herbert", "Sci-Fi"));
         library.addBook(new Book("The Hobbit", "J.R.R. Tolkien", "Fantasy"));
+   System.out.println(library.searchByTitle("1984"));
+System.out.println(library.searchByTitle("Harry Potter"));
+   
     }
 }
